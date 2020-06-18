@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #01</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /* ... */
+
+
+        .big{
+            font-size:1.5em;
+        }
+
+        .flex-container{
+
+            display: flex;
+            /* o main axis padrao é em forma de linha dimensionando em forma unidimensional */
+            
+
+            flex-direction: column;
+            flex-direction: column-reverse;
+
+            flex-direction: row-reverse;
+            flex-direction: row;
+            /* é preciso escolher a orientação, vertical ou horizontal */
+
+            width: 30%;
+
+            /* quebra linha  */
+            flex-wrap: wrap;
+            flex-wrap: wrap-reverse;
+            flex-flow: row wrap;
+
+            /* quebrando coluna  */
+            flex-flow: column-revers wrap;
+          
+
+
+            /* justificar conteuto  */
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+
+            /* distribuido uniformimente na largura mesmo espaço para todos*/
+            justify-content: space-around;
+
+
+            /* apenas espaço entre elementos  */
+            justify-content: space-between;
+
+
+
+
+            /* CROSS AXIS  */
+
+            height: 400px;
+
+            /* padrao  */
+            align-items: stretch;
+
+
+            /* alinhar usando os itenss; */
+            align-items: baseline;
+            align-items: flex-start; /*organizando pelo top do objeto  */
+            align-items: flex-end; /*organizando pelo fim do objeto  */
+            align-items: center; /*organizando pelo centro*/
+
+
+
+            /* mais de uma linha */
+
+            /* alinhar dentro do conteiner  */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: center;
+            align-content: space-around;
+            align-content: space-between;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel big">3</div>
+        <div class="tag nolabel">4</div>
+        <div class="tag nolabel">5</div>
+        <div class="tag nolabel">6</div>
+        <div class="tag nolabel">7</div>
+        <div class="tag nolabel">8</div>
+        <div class="tag nolabel">9</div>
+        <div class="tag nolabel">10</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #01</title>
+    <style>
+        .unidades-absolutas{
+        
+            font-size: 3em;
+            padding: 20px;
+            margin: 30px;
+            border: solid 2px orangered;
+            position: absolute;
+            width: 4cm;
+
+
+            /* so funciona com position abolute */
+            top: 150px;
+            left:200px;
+        }
+/* 
+        em e rem sao unidades relativas */
+        .unidades-relativas{
+            font-size: 4rem;
+            position: absolute;
+            border: solid 1vw red;
+            margin: .8%;
+
+            /* usando dados de referencia pra cada view porte responsivo */
+            width: 20vw;
+            height: 15vh;
+            bottom: 5%;
+            right: 5%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="unidades-absolutas">Opa!</div>
+    <div class="unidades-relativas">Epa!</div>
+</body>
+
+</html>

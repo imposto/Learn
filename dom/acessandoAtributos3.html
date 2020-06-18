@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+       
+        const leitura = document.querySelector('#compras')
+
+        //somenteleitura
+        // nao da pra mudar atravez do attributes
+
+        console.log(leitura.attributes)
+        console.log(leitura.attributes[0]) // por indice
+        // console.log(leitura.attributes.data-urgencia) // da erro pq ele entende que o ifen é um menos tem que usar como string 
+        console.log(leitura.attributes.destino) // notaçao ponto
+        console.log(leitura.attributes['data-urgencia'])
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<h1>Formulardasdaio</h1>
+
+<form action="" method="POST">
+    <input type="text" name="name" placeholder="Nome">
+    <input type="text" name="sobrenome" placeholder="Sobrenome" id="">
+    <input type="text" name="cidade" placeholder="Cidade" id="">
+    Aceita os Termos <input type="checkbox" name="termos" id=""> 
+    <input type="password" name="password" placeholder="Senha" id="">
+    <input type="hidden" name="id" value="3">
+    <div>
+
+        <!-- Quando tem o mesmo name="" apenas um pode ser selecionado -->
+        <input type="radio" name="tipo" value="Admin">Admin
+        <input type="radio" name="tipo" value="Padrão">Padrão
+    </div>
+    <select name="estado" id="">
+        <option value="AC">Acre</option>
+        <option value="AC">Amazonas</option>
+        <option value="AC">São Paulo</option>
+        <option value="AC">Paraná</option>
+        <option value="AC">Brasilia</option>
+        <option value="AC">Pernambuco</option>
+    </select>
+
+    <select name="estado" id="" multiple size="4">
+        <option value="AC">Acre</option>
+        <option value="AM">Amazonas</option>
+        <option value="SP">São Paulo</option>
+        <option value="PA">Paraná</option>
+        <option value="DF">Brasilia</option>
+        <option value="PE">Pernambuco</option>
+    </select>
+
+    <button type="submit"> Incluir</button>
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
+    
+</form>
+
+<style>
+    input{
+        display: block;
+
+        margin-top: 5px;
+    }
+
+    input:hover{
+        background-color: chartreuse;
+    }
+
+    input[type=radio],
+    input[type=checkbox],
+    select{
+
+        display: inline;
+    }
+</style>

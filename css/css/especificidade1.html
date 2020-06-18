@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Especificidade CSS</title>
+    <style>
+        /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity */
+        /* Em linhas gerais...
+        1. regras com !important
+        2. Seletores mais especificos
+        3. ultima regra processada(empate)
+         */
+        /* Quanto mais especifico mais preferencia para o compilador, classe é mais especifica que o nome do elemento em si  */
+         p {
+             background-color: azure;
+         }
+         .observacao{
+             background-color:blueviolet; 
+             border: dashed 5px;
+             padding: 20px;
+             font-size: 40px;
+         }
+
+        /* !important coloca um parametro sobreescrevendo outros com o mesmo nome */
+         /* isso é mais especifico que os 2 por isso ele é aplicado em cima dos outros; */
+         p.observacao{
+             padding: 5px 50px;
+             background: linear-gradient(to right,azure, yellow);
+             
+         }
+
+    </style>
+</head>
+
+<body>
+    <p class='observacao'>Olha essa observação!!!!</p>
+</body>
+
+</html>

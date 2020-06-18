@@ -1,0 +1,10 @@
+Referencia e valores
+
+Objetos sao feitos por Referencia
+valores primitivos sao atribuidos pelo valores
+
+
+Usar Null para zerar uma variavel
+
+let fica em escopos menores como blocos {}
+var é global

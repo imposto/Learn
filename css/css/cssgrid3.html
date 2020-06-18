@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+
+
+        header{
+            grid-area: cabecalho;
+        }
+
+        nav{
+            grid-area: nav;
+        }
+
+        main{
+            grid-area: conteudo;
+        }
+
+        footer{
+            grid-area: rodape;
+        }
+
+
+        body{
+            display: grid;
+
+            /* ocupa tudo na altura */
+            min-height: 100vh;
+
+
+            /* coluna para navegaçao vertical, e conteudo no restante com "1fr" */
+            grid-template-columns: 300px 1fr;
+
+            /* 100px cabeçalho tudo que sobrear pro conteudo "1fr" e 100 px pro rodape  */
+            grid-template-rows: 100px 1fr 100px;
+
+            grid-template-areas: 
+            'cabecalho cabecalho'
+            'nav conteudo '
+            'nav rodape';
+        }
+
+        @media(max-width: 700px){
+            body{
+
+                grid-template-columns: 1fr;
+
+
+                grid-template-rows: 80px  1fr 100px;
+                grid-template-areas:
+                'cabecalho'
+                'conteudo'
+                'rodape';
+             
+            }
+
+            nav{
+                display: none;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* body{
+            display: grid;
+
+            grid-template-rows: [inicio]1fr[cabecalho]1fr[nav]1fr[conteudo]1fr[rodape] ;
+            grid-template-columns: [inicio]1fr[nav]1fr[conteudo] ;
+        }
+        header{
+
+             /* row start column start row end colum end  
+            grid-row-start: inicio;
+            grid-row-end: cabecalho;
+
+            grid-column-start: inicio;
+            grid-column-end: conteudo;
+        }
+
+        main{
+            grid-row-start: cabecalho;
+            grid-row-end: rodape;
+
+            grid-column-start:nav ;
+            grid-column-end: conteudo;
+            
+        }
+
+        nav{
+
+
+            grid-column-start: inicio;
+            grid-column-end: nav;
+
+
+
+        }
+
+        footer{
+            grid-row-start:conteudo;
+            grid-row-end:rodape;
+
+
+        } */
+    </style>
+</head>
+
+<body>
+    <main class="tag">CONTEÚDO</main>
+    <header class="tag">CABEÇALHO</header>
+    <footer class="tag">RODAPÉ</footer>
+    <nav class="tag">NAVEGAÇÃO</nav>
+
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

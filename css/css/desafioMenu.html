@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+
+
+
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0px;
+            font-family: 'Oswald', sans-serif;
+            background-color: darkgray;
+        }
+        .cabecalho{
+            background: #333;
+            border-bottom: solid 5px gold;
+            height: 80px;
+
+            /* com box sizing ele considera a altura somete ao conteudo, padding, margem ou borda ele adiciona a mais */
+            box-sizing: content-box;
+        }
+
+        .logo {
+            display: inline-block;
+            height: 80px;
+            padding: 15px;;
+        }
+
+        .logo img{
+            /* isso fez a imagem ficar com 100% do espaço disponivel no pai no caso .logo */
+            height: 100%;
+        }
+
+        .menu-toggle {
+            float: right;
+            color: rgb(255, 255, 255);
+            background-color: #555;
+            border: solid 1px #777;
+            border-radius: 5px;
+            padding: 10px 20px;
+            height: 40px;
+            margin: 20px 15px;
+        }
+
+        .menu {
+            display: inline-block;
+            vertical-align: top;
+            /* estamos com o border-box por isso os 25px de padding estao incluidos nos 80px de altura */
+
+            height: 80px;
+            padding: 25px;
+        }
+    
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            display:inline-block
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 1.3em;
+            padding: 15px;
+        }
+
+        .autenticacao {
+            float: right;
+            height: 80px;
+            padding: 25px;
+
+        }
+
+        .autenticacao a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.3em;
+            
+        }
+
+        .menu a:hover,
+        .menu a.selected{
+            background-color: gold;
+            color: black;
+        }
+
+
+        .botao{
+            border-radius: 15px;
+            padding: 10px 15px;
+            margin: 10px;
+        }
+
+        .destaque{
+            background-color: rgb(167, 66, 66);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       /* body{
+           background-color: rgb(171, 196, 197);
+           font-family: 'Oswald';
+           
+       }
+
+       .cabecalho{
+           background-color: rgb(22, 22, 53);
+           border-bottom: solid 4px gold;
+           height: 60px;
+           padding: 1em;
+      
+       }
+       a > img{
+            height: 50px;
+            float: left;
+
+            padding: 0px;
+       }
+
+       a{
+        float: left;
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        font-size: 15px;
+        text-align: cen;
+       }
+       a:hover{
+           background-color: gold;
+           color: black;
+       }
+       .menu{
+      
+       }
+       li{
+           display: inline;
+           word-spacing: 20px;
+           font-size: 15px;
+       }
+       
+       aside.autenticacao{
+           float: right;
+           
+       }
+       .botao{
+           border-radius: 25px;
+           border: solid 1px white;
+       }
+
+       .destaque{
+           background-color: rgb(172, 69, 69);
+       }
+
+       .menu-toggle{
+           float: right;
+           display: none;
+           font-size: 40px;
+           color: darkblue;
+       }
+       */
+
+       /* 679px ou mais  */
+       @media  (min-width: 679px) {
+            .menu-toggle {display: none;}
+       } 
+
+       /* 680px ou menos  */
+       @media (max-width: 680px) {
+           .menu {
+               display:none
+           }
+       }
+
+       @media (max-width:910px){
+           .autenticacao {
+               display: none;
+           }
+       }
+   
+
+
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio" class="">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+
+    <script>
+        
+            window.onhashchange = function(e) {
+
+                // split pega oque tem depois do atributo no caso ai cerquilha ele tira fora
+                // split serve pra dividir uma string depois desse caractere
+                const oldURL = e.oldURL.split('#')[1]
+                const newURL = e.newURL.split('#')[1]
+                console.log(oldURL, newURL)
+                const oldMenu = document.querySelector (`.menu a[href='#${oldURL}']`)
+                const newMenu = document.querySelector (`.menu a [href='#${newURL}']`)
+
+                oldMenu && oldMenu.classList.remove('selected')
+                newMenu && newMenu.classList.add('selected')
+            }
+        
+    </script>
+</body>
+
+</html>

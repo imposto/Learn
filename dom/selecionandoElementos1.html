@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+      
+        // adicionei uma classe ao elemento com id 'primeiro'
+        // pega um unico elemento o primeiro que encontrar
+        document.getElementById('primeiro').classList.add('destaque')
+
+        // esse pega uma lista 
+        const divs = document.getElementsByTagName('div')
+        // trasformar em um array 
+        // tirei a classe destaque de todas as divs 
+        Array.from(divs).forEach(e => e.classList.remove('destaque'))
+
+
+        // adicionei destaque a todas as divis depois de juntas a contagem das divs num array só 
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add('destaque'))
+
+        // resultados como html collection divs 
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+
+        for( let e of ultimosElementos){
+            e.classList.remove('destaque')
+        }
+
+
+    
+    </script>
+</body>
+</html>

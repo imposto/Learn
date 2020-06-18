@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>XMLHttpRequest #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Estados</h1>
+
+    <script>
+        function ajax(config){
+            const xhr = new XMLHttpRequest()
+            xhr.open(config.metodo, config.url, true)
+
+            // readyState	Holds the status of the XMLHttpRequest.
+            //     0: request not initialized
+            //     1: server connection established
+            //     2: request received
+            //     3: processing request
+            //     4: request finished and response is ready
+
+            xhr.onreadystatechange = e =>{
+                if(xhr.readyState === 4){
+                    if(xhr.status === 200){
+                        config.sucess(xhr.responseXML)
+                    }else if(xhr.status >= 400){
+                        config.erro({
+                            code: xhr.status,
+                            text: xhr.statusText
+                        })
+                    }
+                }
+            }
+
+            xhr.send()
+        }
+
+
+        ajax({
+            url: "dados/estados.XML",
+            metodo: "get",
+            sucess(resposta){
+                const estados = resposta.getElementsByTagName('estado')
+                const itens = Array.from(estados).reduce(
+                    (html,estado) => html + `<li>${estado.attributes.nome.value}`, ''
+                )
+                document.body.insertAdjacentHTML('beforeend', `<ul>${itens}</ul>`)
+            },
+            erro(e){
+                const msg = document.createTextNode(`${e.code} : ${e.text}`)
+                document.body.appendChild(msg)
+            }
+        })
+    </script>
+</body>

@@ -1,0 +1,6 @@
+@import "~bootstrap/scss/bootstrap"; // aqui estou importando apenas oque eu quero que seja convertido no biuld
+
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome";
+
+@import "custom";

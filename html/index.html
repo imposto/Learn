@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios</title>
+
+
+
+
+    <style>
+
+        #conteudo{
+            padding: 30px 0px 30px 0px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercicios HTML</h1>
+    </header>
+<!-- Jogando uma pagina dentro de uma div na mesma pagina -->
+    <nav>
+
+        <a href link-exerc="exercicios/teste.html">00 - Teste - </a>
+
+        <a href link-exerc="exercicios/texto1.html">01 - Teste-</a>
+
+        <a href link-exerc="exercicios/texto2.html">02 - Teste-</a>
+
+        <a href link-exerc="exercicios/listas.html">03 - Listas-</a>
+
+        <a href link-exerc="exercicios/listaAninhada.html">04 - Listas Aninhadas-</a>
+
+        <a href link-exerc="exercicios/links.html">05 - Links-</a>
+
+        <a href link-exerc="exercicios/tabela.html">06 - Tabelas-</a>
+
+        <a href link-exerc="exercicios/form/form.html">Formularios-</a>
+
+        <a href link-exerc="exercicios/imagens.html">Imagens-</a>
+
+        <a href link-exerc="exercicios/video.html">Video-</a>
+
+        <a href link-exerc="exercicios/Tagsnaovisuais.html">TagsNao Visuais--</a>
+    </nav>
+
+    <section id="conteudo"></section>
+
+    <footer>Rodapé</footer>
+
+    <script>
+        document.querySelectorAll('[link-exerc]').forEach(link => {
+            link.onclick= function(e){
+                
+                // Prevene o comportamento padrao que é a pagina navegar para outra
+                e.preventDefault()
+                const conteudo = document.getElementById('conteudo')
+                // fetch é uma requisição ajax
+                fetch(link.getAttribute('link-exerc'))
+                // quando o primeiro then for resolvido ele vai pra proxima
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+                    // resp.text() retorna o conteudo html
+            }
+        })
+    </script>
+
+
+</body>
+</html>

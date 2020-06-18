@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #02</title>
+    <style>
+        .fora{
+            position: relative;
+            background-color: orangered;
+            height: 400px;
+            padding: 50px;
+            width: 100%;
+
+/* padrao */
+            position: static;
+            position: relative;
+            position: absolute; /*conteudo + padding: ; */
+        }
+        .dentro{
+            background-color: palevioletred;
+        }
+    </style>
+</head>
+<body>
+    <!-- divs nao tem altura padrao mas tem largura 100% -->
+    <div class="fora">
+        <div class="dentro">a</div>
+    </div>
+</body>
+</html>

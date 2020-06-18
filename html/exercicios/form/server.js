@@ -1,0 +1,26 @@
+const express=require('express')
+
+const app = express()
+const bodyParser = require('body-parser')
+// body parser vai pegar todos os dados do formulario e jogar dentro do requestAnimationFrame.body
+
+
+//metodo urlcoded é o padrao de dados que vem do formulario
+app.use(bodyParser.urlencoded({extended: true}))
+
+
+// req e resp é uma funcao middleware
+app.post('/usuarios', (req, resp) =>{
+    console.log(req.body)
+    resp.send('<h1>Parabéns</h1>')
+})
+
+app.post('/usuarios/:id', (req, resp) =>{
+    console.log(req.params.id)
+    console.log(req.body)
+    resp.send('<h1>Parabéns Usuario alterado</h1>')
+})
+
+
+
+app.listen(3003)

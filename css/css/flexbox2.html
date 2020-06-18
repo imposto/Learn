@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        .flex-container div{
+            /* com border box, o tamanho do elemento considera ate a borda invez de adicionala  */
+            box-sizing: border-box;
+        }
+
+        .flex-container{
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+
+        .flex-container div:nth-child(3){
+            background-color: yellow;
+            /* ordem maior é igual a exibir por ultimo, se for menor em primeiro  */
+            order: -1;
+
+            /* alinhando cada um dos elementos dentro da div flex na vertical  */
+            align-self: center;
+            align-self: flex-end;
+            align-self: flex-start;
+
+            /* pardrao  */
+            align-self: stretch;
+        }
+
+        .flex-container div {
+            width: 100px;
+            /* ngn cresce  */
+            flex-grow: 0;
+            /* eles crescem 1 vez */
+            flex-grow: 1;
+        }
+        .flex-container div:nth-child(1) {
+        flex-grow: 2;
+        }
+
+        .flex-container{
+            width: 300px;
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1){
+            /* encolher */
+            flex-shrink: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container tag nolabel">
+        <div class="tag nolabel">1</div>
+        <div class="tag nolabel">2</div>
+        <div class="tag nolabel">3</div>
+        <div class="tag nolabel">4</div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        $('div').hide(5000).show(4000).fadeOut(2000).fadeIn(5000) // ja selecionara um conjunto de divs // oque retorna aqui nao sao os objetos nó da dom
+        console.log($('div').get(0)) // se pegar o objeto puro nao da pra usar as funçoes acima, oque ele pega acima nao e o objeto mesmo
+        console.log($.isEmptyObject({nome: null})) // funcao utilitaria para verificar se um objeto e vazio
+        console.log(jQuery.inArray(3,[1,2,3])) // verifica se o primeiro parametro esta dentro do array // se naop estiver ele retorna -1 // se tiver ele retorna o indice de onde ele eta
+
+        $.fn.fundoVerde = function(){
+            
+            this.css('background-color', 'green') // uma funcao jquery para mudar o fundo do elemento que eu achamar, como encadiamento por exemplo
+            return this // retorna o proprio objeto para fazer uma nova coisa
+        }
+
+        $('body').fundoVerde() // isso nao encadeia sem o return this na funcao chamada. pois precisa de um retorno para proxima encadiaçao
+    </script>
+</body>

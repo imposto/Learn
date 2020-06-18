@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Classes</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        Classes
+    </div>
+    <script>
+        const classes = document.querySelector('div').classList // class list permite fazer aleraçoes nas classes desse atributo
+        classes.add('destaque')
+        classes.remove('destaque')
+        classes.toggle('destaque')
+        console.log(classes.contains('destaque')) // pergunta se tem a classe destaque dentro dessa tag
+        console.log(classes.length) // quantidade de classes dentro da tag
+        classes.toggle('destaque') // alterna a classe dentro, se tiver tira, se nao tiver poe
+        console.log(classes.length)
+
+        classes.add('destaque1')
+        classes.add('destaque2')
+        console.log(classes.lenght)
+
+        for(let c of classes){ // da pra fazer um for com ele pois tem, um inter associado DOMToken
+            console.log(c)
+        }
+
+        classes.forEach(c => console.log(c))
+        //  e possivel fazer um array dessa classe 
+        Array.from(classes)
+        // ou array usando spread
+        console.log([...classes])
+    
+    </script>
+</body>
+
+</html>

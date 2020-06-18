@@ -1,0 +1,18 @@
+const prod1 = {
+    nome: '....',
+    preco: '...',
+    estoque: '...'
+}
+
+//Factory simples
+
+function criarPessoa(nome, sobrenome) {
+    return{
+        nome: nome,
+        sobrenome: sobrenome
+    }
+}
+
+console.log(criarPessoa('Ana', 'Lice'))
+
+

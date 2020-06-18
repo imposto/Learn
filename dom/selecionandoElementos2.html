@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>              
+
+        // query selector precisa da cerquilha pq ele espera um seletor igual o css
+        // pega apenas o primeiro 
+        // document.querySelector('#primeiro').classList.add('destaque')
+
+        // pega todos 
+        const selecionar = seletor => 
+            document.querySelectorAll(seletor).forEach(seletor => seletor.classList.add('destaque'))
+
+        const desselecionar = seletor =>
+            document.querySelectorAll(seletor).forEach(seletor => seletor.classList.remove('destaque'))
+
+
+        selecionar('div')
+
+        // asteristico é um seletor universal 
+        desselecionar('*')
+        // selecionei algo com 2 classes especificas 
+        selecionar('.terceiro.ultimo')
+        desselecionar('*')
+        // selecionando tudo que nao tenha a id #prinmeiro 
+        selecionar(':not(#primeiro)')
+        desselecionar('*')
+
+        // selecionei um filho de qaulquer tag no caso pegou o primeiro elemento do body
+        selecionar(':nth-child(1)')
+        desselecionar('*')
+
+        // selecionar o elemento div, vai selecionar o primeiro elemento do tipo passado antes dos 2 pontos
+        selecionar('div:nth-of-type(1)')
+        desselecionar('*')
+
+        //selecionar a partir de um atributo que vc fez dentro das tags usando []
+        selecionar('[wb-attrib]')
+
+
+        // Array.fromm ou [array...] 
+
+    </script>
+</body>
+</html>

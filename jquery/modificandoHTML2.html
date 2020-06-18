@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src='js/jquery.js'></script>
+</head>
+
+<body class='conteudo exercicio'>
+    <h1>Modificando HTML #02</h1>
+    <div id='div1'>1</div>
+    <div id='div2'>2</div>
+    <div id='div3'>3</div>
+    <p class='numero'>4</p>
+    <p class='numero'>5</p>
+
+    <script>
+        $('#div1').append(', 2')
+        $('#div1').prepend('0, ')
+
+        $('<span>, 3</span>').appendTo('#div1') // adicionando uma informaçado dentro do div1 
+    
+        $('<span> -1, </span>').prependTo('#div1')
+
+        $('#div2').before('<p>Antes 2</p>') // inseri esse p antes da div
+        $('#div2').after('<p>Depois 2</p>') // inseri esse p depois da div
+
+        $('<span> Antes da Div 3</p>').insertBefore('#div3')
+        $('<span> Depois da Div 3</p>').insertAfter('#div3')
+
+            // wrap significa envolver, epacotar
+        // $('p.numero').wrap('<div>Wrap</div>') // pega tudo e coloca numa div
+        $('p.numero').wrapAll('<div id="div4"> </div>')
+        $('#div4').empty()
+        $('#div4, #div3').prev().remove() // removendo oque tem antes da div4 e da div 3
+        
+
+        // $('<div>Substituto</div>').replaceAll('body> p') // qualquer paragrafo que estiver diretamente dentro de body vai ser substituido por uma div ai
+        // $('body > p').replaceWith('<div> Substituido </div>')
+        $('body > p').replaceWith(function (){
+            // usando isso da pra adicionar novas coisas
+            return $('<div>').html($(this).html()).append('!!!') // esse seleciona o conteudo do paragrafo de dentro da p e coloca na div
+        })
+    
+    </script>
+</body>

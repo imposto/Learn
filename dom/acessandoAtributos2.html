@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritorio' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        
+        const lista = document.querySelector('div ul[destino="escritorio"]')
+        console.log('Elemento "ul"......................')
+        console.log('childNodes', lista.childNodes)
+
+        //getattrbitut consegue encontrar parametros personalizados dentro de uma tag
+        console.log('getAttribute', lista.getAttribute('destino'))
+        //saber se há ou nao um attribute dentro dessa tag
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+
+        // setta um valor em um atributto personalizado 
+        lista.setAttribute('destino', 'casa')
+
+        // é possivel atribuir um atributo e valor novo dentro da tag que nao existia antes
+        lista.setAttribute('status','Offline')
+
+        lista.removeAttribute('destino')
+
+        //quando usa data no nome dos attributos é visto de maneira diferente 
+        console.log(lista.dataset)
+        // é possivel alterar o valor também
+        lista.dataset.urgencia = 4
+        console.log(lista.dataset)
+
+
+        console.log(lista.getAttribute('data-urgencia'))
+
+        // cuidado
+        const label = document.querySelector('label')
+
+        // para acessar atributos com nome reservados da linguagem precisa usar htmlFor 
+        console.log(label.for)
+        console.log(label.htmlFor)
+        console.log(label.getAttribute('for'))
+
+    </script>
+</body>
+
+</html>

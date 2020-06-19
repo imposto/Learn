@@ -1,6 +1,7 @@
-@import "~bootstrap/scss/bootstrap"; // aqui estou importando apenas oque eu quero que seja convertido no biuld
+// o ~ significa que vai procurar dentro de node modules
+@import "~bootstrap/scss/bootstrap"; // aqui estou importando apenas oque eu quero que seja convertido no biuld, com bootstrap trarei todas as dependencias dele
+// mas se eu quiser posso trazer apenas os botoes do bootstrap ou grid etc
+$fa-font-path: "~font-awesome/fonts"; // sobre escreveu uma variavel do bootstrap para uma do font awesome
+@import "~font-awesome/scss/font-awesome"; // depois de reescrever posso importar do font awesome
 
-$fa-font-path: "~font-awesome/fonts";
-@import "~font-awesome/scss/font-awesome";
-
-@import "custom";
+@import "custom"; // com isso a partir desse posso agregar um scss meu depois.

@@ -1,0 +1,19 @@
+.display{
+    background: linear-gradient(to right, rgb(48, 67, 82), rgb(5, 10, 04));
+
+    /* ocupando 4 colunas  */
+    grid-column: span 4;
+    /* trasformando o display em display flex para modificar o conteudo */
+    display: flex;
+    /* jogando o conteudo para direita, ou melhor, fim do elemento  */
+    justify-content: flex-end;
+    /* centralizando na vertical */
+    align-items: center;
+    /* espaçamento */
+    padding: 10px;
+    /* tamanho da fonte  */
+    font-size: 2.1em;
+    /* garantir overflow hidden */
+    overflow: hidden;
+
+}

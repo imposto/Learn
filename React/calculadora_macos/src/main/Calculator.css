@@ -1,0 +1,18 @@
+.calculator{
+    height: 720px;
+    width: 535px;
+    border-radius: 5px;
+    
+    /* tudo que estiver pra fora da calculadore é escondido */
+    overflow: hidden; 
+    background: linear-gradient(to right, rgb(35, 37, 38), rgb(65, 67, 69));
+
+
+
+    /* Utilizando template grid css  */
+    display: grid;
+    /* fiz um template de colunas que repete 4 itens onde cada um ocupa 25% do espaço disponivel */
+    grid-template-columns: repeat(4, 25%);
+    /* determinei o tamanho da altura das linhas do grid */
+    grid-template-rows: fr 1fr 48px 48px 48px 48px;
+ }

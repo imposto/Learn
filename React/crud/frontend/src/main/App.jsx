@@ -1,19 +1,26 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'font-awesome/css/font-awesome.min.css'
-import './App.css'
-import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css' // Bootstrap
+import 'font-awesome/css/font-awesome.min.css' // Font Awesome
+import './App.css' // css Global
+import React from 'react' // React
+import { HashRouter } from 'react-router-dom' // Envolve conjunto da pagina
+// BrowserRouter não utlizia as Hashs >> Problemas em produção
+// HashRouter
 
+import Router from './Routers' // Rotas
 import Logo from '../components/template/Logo'
 import Nav from '../components/template/Nav'
-import Main from '../components/template/Main'
 import Footer from '../components/template/Footer'
 
 
+
+
 export default props =>
-    <div className="app">
-        <Logo/>
-        <Nav/>
-        <Main icon="home" title="Início"
-            subtitle="Segundo projeto com React."/>
-        <Footer/>
-    </div>
+
+    <HashRouter>
+        <div className="app">
+            <Logo />
+            <Nav />
+            <Router/>
+            <Footer />
+        </div>
+    </HashRouter>

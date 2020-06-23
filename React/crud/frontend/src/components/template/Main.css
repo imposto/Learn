@@ -1,5 +1,4 @@
-.content{
-    background: linear-gradient(to right, rgb(35, 37, 38), rgb(65, 67, 69));
-
-    
+main > div{
+    background-color: white;
+    box-shadow: 0px 0px 15px #0004;
 }

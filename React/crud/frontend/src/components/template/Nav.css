@@ -1,3 +1,17 @@
-.nav{
-    background: linear-gradient(to right, rgb(192, 36, 37), rgb(240, 203, 53));
+aside.nav{
+    background-color: var(--bg-dark);
+}
+.nav-bar{
+    width: 100%;
+}
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    display: block;
+    font-weight: 300;
+}
+
+.nav-bar a:hover{
+    background: linear-gradient(to right, rgb(241, 39, 17), rgb(245, 175, 25));
 }

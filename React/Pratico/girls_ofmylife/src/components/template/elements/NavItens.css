@@ -1,0 +1,5 @@
+nav.navbar a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 40px;
+}

@@ -1,0 +1,25 @@
+aside.nav{
+    background-color: var(--light);
+    box-shadow: var(--shadow);
+}
+
+
+nav.navbar{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-size:15px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar img {
+    height: 20px;
+}
+
+.navbar a{
+
+}
+
+
+

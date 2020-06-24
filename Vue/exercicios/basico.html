@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conceitos Básicos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+    <div id="app">
+        <!-- template para instancia do vue -->
+
+        <!-- execultando codigos node dentro do html com duble mustache -->
+        <p>{{ 2 + 2}}</p>
+        <p>{{ "teste".toUpperCase()}}</p> 
+    </div>
+    <script>
+        new Vue({
+            el : "#app" // o elemento q o vue vai controlar
+            data:{ // dados que eu quero que esteja disponivel dentro da minha aplicação
+                
+            }
+        })
+    </script>
+</body>
+</html>

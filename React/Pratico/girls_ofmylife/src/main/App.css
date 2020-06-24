@@ -1,0 +1,37 @@
+:root {
+    --dark: hsla(0, 0%, 11%, 1);
+    --light: hsla(13, 90%, 96%, 1);
+    --gold: hsla(45, 70%, 56%, 1);
+
+    --shadow:
+        0 2px 23px rgba(0,0,0,0.1),
+        0 2px 49px rgba(0,0,0,0.06);
+
+    --nav-height: 50px;
+    --footer-height: 70px;
+
+}
+
+
+.app{
+    margin: 0;
+    display: grid;
+    grid-template-rows: var(--nav-height) 1fr var(--footer-height);
+    grid-template-areas: 
+        "nav"
+        "content"
+        "footer";
+
+        height: 100vh;
+        
+}
+
+aside.nav{
+    grid-area: nav;
+}
+main.content{
+    grid-area: content;
+}
+footer.footer{
+    grid-area: footer;
+}

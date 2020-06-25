@@ -8,8 +8,32 @@
 </head>
 <body class="exercicio">
 
+    <div id="app">
+        <saudacao nome="Ana"></saudacao>
+        <saudacao nome="Pedro"></saudacao>
+        <saudacao nome="Analice"></saudacao>
+    </div>
+
+
     <script>
-        // ...
+        Vue.component('saudacao', {
+            props: ['nome'],
+
+            //dados dentro de compronentes precisam ser retornados com uma function
+            data: function(){
+                return {
+                    contador: 0
+                }
+            },
+            template: `
+                <div>Bom Dia {{nome}}!</div>
+            `
+        })
+
+
+        new Vue ({
+            el : "#app"
+        })
     </script>
 </body>
 </html>

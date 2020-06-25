@@ -12,9 +12,21 @@
     </style>
 </head>
 <body class="exercicio">
-
+    <!-- os : faz o vue monitorar este elemento -->
+    <div id="app" @click="aplicarCor = !aplicarCor"
+        :class="{'vermelho': aplicarCor}"> 
+        <p>{{aplicarCor}}</p>
+        Teste
+    </div>
     <script>
-        // ...
+
+        // aplicação de estilos css atravez do vue 
+        new Vue({
+            el: "#app",
+            data: {
+                aplicarCor : false
+            }
+        })
     </script>
 </body>
 </html>

@@ -8,8 +8,38 @@
 </head>
 <body class="exercicio">
 
+    <div id="app">
+        <p>{{link}}</p>
+        <!-- // sem Binding -->
+        <p><a href="{{link}}">Canal</a></p>
+        <!-- com bind que é um diiretiva, comm o v-binding indicamos q o conteudo desta variavel : precisa ser interpolado no Vue  -->
+        <p><a v-bind:href="link">Agnos</a></p>
+        <!-- também é um bind de forma reduzida  -->
+        <p><a :href="link"></a></p>
+
+        <!-- bind duplo lateral, modifica o valor  usando o v-model
+        ja com o  v-bind: value "" não modifica -->
+        <p>
+            <input type="password" v-model="nome">
+            <input type="text" v-bind:value="nome">
+            <span>{{nome}}</span>
+        </p>
+    </div>
+
+
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                nome: "Maria",
+                link:"https://www.youtube.com/channel/UCrJc9yCxShmJq6ZJZt62xMQ"
+            },
+            watch:{ // fica observando as mudanças nos atributos e respondendo com alguma função
+                nome(novoValor){
+                    console.log(novoValor.toUpperCase())
+                }
+            }
+        })
     </script>
 </body>
 </html>

@@ -1,15 +1,60 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>If & For</title>
     <link rel="stylesheet" href="/css/estilo.css">
     <script src="/js/vue.min.js"></script>
 </head>
+
 <body class="exercicio">
 
+    <div id="app">
+
+
+        <!-- com a propriedade vue-for feita v-for, colocamos quais serao os dados resgatados, e em qual a array sera buscado -->
+        <p v-for="(aluno, i) in alunos">
+            {{i+1}}) {{aluno.nome}} - {{aluno.nota}}
+
+            <!-- propriedade v-if,  testa um atributo de forma logica, e so adiciona a DOM se for true  -->
+            <span v-if="aluno.nota >= 9">Quadro de Honra</span>
+            <!-- else if, so é testado se o de cima for falso  -->
+            <span v-else-if="aluno.nota >=7">Aprovado</span>
+            <span v-else-if="aluno.nota < 4">Reprovado</span>
+            <!-- caso nao entre em nenhuma dessas  -->
+            <span v-else>Reprovado</span>
+        </p>
+
+        <!-- outro tipo de repetição, comportamento do v-for  -->
+        <ul style="list-style:none">
+            <li v-for="n in 500">{{n}}
+                <!-- uma condição -->
+                <span v-show="n >= 300">{{n}}</span>
+            </li>
+        </ul>
+    </div>
+
+
+
     <script>
-        // ...
+        new Vue({
+
+            el: "#app",
+            data: {
+                alunos: [
+                    { nome: "Ana", nota: 8.7 },
+                    { nome: "João", nota: 3.4 },
+                    { nome: "Pedro", nota: 6 },
+                    { nome: "Jessica", nota: 9.7 },
+                    { nome: "Lucas", nota: 10 },
+                    { nome: "Brenda", nota: 4 },
+                ]
+            }
+
+
+        })
     </script>
 </body>
+
 </html>

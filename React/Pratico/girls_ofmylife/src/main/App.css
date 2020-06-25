@@ -9,6 +9,7 @@
 
     --nav-height: 50px;
     --footer-height: 70px;
+    --navLateral-width: 100px;
 
 }
 
@@ -16,11 +17,12 @@
 .app{
     margin: 0;
     display: grid;
+    grid-template-columns: var(--navLateral-width) 1fr;
     grid-template-rows: var(--nav-height) 1fr var(--footer-height);
     grid-template-areas: 
-        "nav"
-        "content"
-        "footer";
+        "nav nav"
+        "navLateral content"
+        " footer footer";
 
         height: 100vh;
         
@@ -28,6 +30,9 @@
 
 aside.nav{
     grid-area: nav;
+}
+aside.navLateral{
+    grid-area: navLateral;
 }
 main.content{
     grid-area: content;

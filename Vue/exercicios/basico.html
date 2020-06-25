@@ -13,12 +13,29 @@
         <!-- execultando codigos node dentro do html com duble mustache -->
         <p>{{ 2 + 2}}</p>
         <p>{{ "teste".toUpperCase()}}</p> 
+        <p>{{nome}}</p>
+        <p>{{horaCerta()}}</p>
+        <p>Preço com Desconto {{precoComDesconto}}</p>
     </div>
     <script>
         new Vue({
-            el : "#app" // o elemento q o vue vai controlar
+            el : "#app", // o elemento q o vue vai controlar
             data:{ // dados que eu quero que esteja disponivel dentro da minha aplicação
-                
+                nome : 'Caneta',
+                preco: 6.89,
+                desconto: 0.15
+            },
+            methods: {
+                horaCerta(){
+                    return new Date().toLocaleString()
+                }
+            },
+            computed: {
+                precoComDesconto(){
+                    // dentro da Vue instance vc acessa os atributos com this. 
+                    return this.preco * (1 - this.desconto)
+                    // valores computados devem ser chamados como valor e nao funcao
+                }
             }
         })
     </script>

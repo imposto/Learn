@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Componente</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+
+<body class="exercicio">
+
+    <div id="app">
+        <contador></contador>
+    </div>
+
+
+    <script>
+        // Vue.component('incrementador', {
+        //     props: ['contador'],
+
+        //     //dados dentro de compronentes precisam ser retornados com uma function
+        //     data: function(){
+        //         return contador ++
+        //     },
+        //     template: `
+        //         <div>Bom Dia {{nome}}!</div>
+        //     `
+        // })
+
+        // nome do componente, depois o objeto relacionado aos dados do componente
+        Vue.component('contador', {
+            data: function () {
+                return {
+                    contador: 0 // o componente retorna uma funcao q tem retorno num objeto, para que toda vez q haja um novo componente, exista um novo objeto
+                }
+            },
+            methods: {
+                add() {
+
+                    this.contador++
+                }
+            },
+            template: `
+                <div>
+                    <span>{{ contador}}</span>
+                    <button @click="add">+1</button>
+
+                </div>
+            `
+        })
+
+
+        new Vue({
+            el: "#app",
+            data: {
+                contador: 0
+            }
+        })
+    </script>
+</body>
+
+</html>

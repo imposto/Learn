@@ -7,9 +7,44 @@
     <script src="/js/vue.min.js"></script>
 </head>
 <body class="exercicio">
+    <div id="app">
+        <p>{{contador}}</p>
+        <p>
+            <!-- v-on e o tipo de evento que eu quero tratar  -->
+            <button v-on:click="add">Adicionar</button>
+            <!-- mesma coisa que o de cima, mas agora decrementando, e colocando um method simples diretamente na expressão -->
+            <button @click="contador -= 1">Retirar</button>
 
+            <!-- um methodo sendo usado como gatilho de um evento pra receber os valores -->
+            <p @mousemove="atualizarPosicao"> 
+                Coordenadas : {{x}} e {{y}}
+                <span @mousemove.stop>Aqui não</span>
+            </p>
+            <!-- com key up do Enter, a funcao vai ser chamada -->
+            <input type="text" @keyup.enter="alerta">
+        </p>
+    </div>
     <script>
-        // ...
+        new Vue ({
+            el : "#app",
+            data: {
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                add() {
+                    this.contador++
+                },
+                atualizarPosicao(e){
+                    this.x = e.clientX
+                    this.y = e.clientY
+                },
+                alerta(){
+                    alert('Enter!')
+                }
+            }
+        })
     </script>
 </body>
 </html>

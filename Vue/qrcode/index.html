@@ -10,9 +10,76 @@
 </head>
 
 <body>
+<!-- 
+    <div id="app">
+
+        <h1>{{title}}</h1>
+        <div>
+            <input type="text" size="25" placeholder="Digite para gerar..." :value="text" @input="onData">
+        </div>
+        usando v-if para mostrar a div apenas se o texto existir, que no caso logico é true
+        <div v-if="text" class="output">
+            <img :src="newQRCode" alt="delicia">
+        </div>
+
+    </div>
+
 
     <script>
-        // ...
+        new Vue({
+            el: "#app",
+            data: {
+                title: 'Gerador de QRCode',
+                text: 'https://github.com/Agnoos/Learn',
+                qrcode: new QRious({ size: 300 })
+            },
+            computed: {
+                newQRCode() {
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                },
+            },
+            methods: {
+                onData(event) {
+                    this.text = event.target.value
+                }
+            }
+        })
+    </script> -->
+
+
+
+    <!-- codigo refatorado, usando v-model e não necessidando mais de um methodo -->
+
+    <div id="app">
+
+        <h1>{{title}}</h1>
+        <div>
+            <input type="text" size="25" placeholder="Digite para gerar..." v-model="text">
+        </div>
+        <!-- usando v-if para mostrar a div apenas se o texto existir, que no caso logico é true  -->
+        <div v-if="text" class="output">
+            <img :src="newQRCode" alt="delicia">
+        </div>
+
+    </div>
+
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                title: 'Gerador de QRCode',
+                text: 'https://github.com/Agnoos/Learn',
+                qrcode: new QRious({ size: 300 })
+            },
+            computed: {
+                newQRCode() {
+                    this.qrcode.value = this.text
+                    return this.qrcode.toDataURL()
+                },
+            },
+        })
     </script>
 </body>
 

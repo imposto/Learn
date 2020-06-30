@@ -1,0 +1,15 @@
+"var" nao estrapola os limites de uma função
+
+"var" pode ser redeclarada com o mesmo nome, reescrita, e sempre utiliza o ultimo valor atribuido
+
+"var" o Node eleva todas as variaveis Var antes do codigo, eles ja sao pre carregados que existem, mas suas atribuições não, elas só são carregadas conforme a escrita do codigo
+
+
+"let" são variaves que nunca sairão do seu escopo, é utilizada para condicionais e repetiçoes, uma variavel let em uma função nunca saira dela
+
+"let" não pode ter o nome da variavel reescrita, mas o valor pode.
+
+"let" é inicializada em hosting mas não como undefined igual a var, logo se nao tiver atribuiçoes dará erro no codigo.
+
+
+"Const" não pode ser reatribuido seu valor nem seu nome, são inicializados com seus nomes mas não com o seu valor

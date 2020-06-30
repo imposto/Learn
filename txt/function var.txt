@@ -1,0 +1,21 @@
+
+Esse execulta
+-------------------------------------------------------
+myfunc()
+function myfunc(){
+	logic
+}
+
+Function Declaration 1°
+São execultadas independentemente da inicialização
+-------------------------------------------------------
+
+
+Esse não execulta
+-------------------------------------------------------
+myFunc()
+
+var MyFunc(){
+	logic
+}
+-------------------------------------------------------

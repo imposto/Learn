@@ -1,0 +1,15 @@
+user in cmd : 
+mysql -u root -p >> acessar o mysql 
+
+
+
+
+
+
+
+database plugin
+ctrl + shift + p 
+mysql
+
+dados do banco
+shcmena selecionado

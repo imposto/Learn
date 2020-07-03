@@ -4,5 +4,5 @@ import './Logo.css'
 
 export default props =>
     <aside className="logo">
-        <img src={logo} alt="Logo" className=" img-fluid  "/>
+        <div className="agnos" title="AGNOS">AGNOS</div>
     </aside>

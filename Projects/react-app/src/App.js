@@ -4,20 +4,27 @@ import 'font-awesome/css/font-awesome.min.css'
 import Logo from './components/Logo'
 import Header from './components/Header'
 import Navbar from './components/Navbar'
-import Content from './components/Content'
 import Footer from './components/Footer'
 import './App.css';
+import Router from './Router';
+import { HashRouter } from 'react-router-dom';
+
+
 
 
 function App() {
   return (
-    <div className="App">
-      <Logo></Logo>
-      <Header></Header>
-      <Navbar></Navbar>
-      <Content></Content>
-      <Footer></Footer>
-    </div>
+
+    <HashRouter>
+      <div className="App">
+        <Logo></Logo>
+        <Header></Header>
+        <Navbar></Navbar>
+        <Router></Router>
+        <Footer></Footer>
+      </div>
+    </HashRouter>
+
   );
 }
 

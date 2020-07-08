@@ -4,5 +4,5 @@ import './Logo.css'
 
 export default props =>
     <aside className="logo">
-        <div className="agnos" title="AGNOS">AGNOS</div>
+        <div className="agnos" title="AGNOOS">AGNOOS</div>
     </aside>

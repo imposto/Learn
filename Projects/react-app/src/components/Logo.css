@@ -34,14 +34,14 @@ div.agnos {
     }
 }
 
-div:before,
-div:after {
+div.agnos:before,
+div.agnos:after {
     content: attr(title);
     position: absolute;
     left: 0;
 }
 
-div:before {
+div.agnos:before {
     animation: glitchTop 2s linear infinite;
     clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
@@ -61,7 +61,7 @@ div:before {
     }
 }
 
-div:after {
+div.agnos:after {
     animation: glitchBotom 2.5s linear infinite;
     clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
     -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);

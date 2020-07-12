@@ -13,3 +13,8 @@ mysql
 
 dados do banco
 shcmena selecionado
+
+
+left join traz tudo da esquerda com a interscesão 
+right join traz tudo na direita com a interscesão
+outer é opcional

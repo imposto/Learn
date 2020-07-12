@@ -12,9 +12,4 @@ create table if not exists cidades (
 
 
 
-create table if not exists teste (
-    id int UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY
-);
-
-
 DROP TABLE IF EXISTS teste;
